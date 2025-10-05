@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🚀 NASA Data Studio — Star Navigators Team </title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin/>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <!-- Plotly for 3D -->
+  <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+</head>
+<body>
+  <!-- Background stars & shooting meteors (no mouse trail) -->
+  <canvas id="bgStars" aria-hidden="true"></canvas>
+  <canvas id="bgTrails" aria-hidden="true"></canvas>
+
+  <header class="topbar">
+    <div class="brand">
+      <svg width="28" height="28" viewBox="0 0 24 24" class="logo" aria-hidden="true">
+        <defs><linearGradient id="g1" x1="0" x2="1">
+          <stop offset="0%" stop-color="#7c5cff"/><stop offset="100%" stop-color="#3dd9eb"/></linearGradient></defs>
+        <path fill="url(#g1)" d="M12 2l2.39 4.84 5.34.78-3.86 3.77.91 5.32L12 14.77 7.22 16.71l.91-5.32L4.27 7.62l5.34-.78L12 2z"/>
+      </svg>
+      <span>NASA Data Studio — Star Navigators Team</span>
+    </div>
+    <nav>
+      <a href="#apod">APOD</a>
+      <a href="are-we-alone.html" class="primary big">Are We Alone?</a>
+      <a href="#chart">2D Charts</a>
+      <a href="#viz3d">3D</a>
+      <a href="#predict">Predict</a>
+      <a href="#settings">Settings</a>
+      <a href="#about">About</a>
+      <a href="are-we-alone.html">Are We Alone?</a>
+    </nav>
+    <div class="actions">
+      <!-- Language toggle hidden to keep English-only for now -->
+      <button id="langToggle" class="ghost" style="display:none">EN</button>
+      <button id="themeToggle" class="ghost" title="Toggle theme">🌓</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero card">
+      <div class="hero-text">
+        <h1>Embark on an Interstellar Journey 🌌</h1>
+        <p class="muted">Travel through stars, witness distant exoplanets, and unlock cosmic secrets.</p>
+        <div class="hero-cta">
+          <a href="travel1.html" class="primary big">🚀 Start Travel</a>
+          <a href="are-we-alone.html" class="primary big">Are We Alone?</a>
+          <a href="#predict" class="ghost">Try prediction</a>
+        </div>
+      </div>
+      <div class="hero-art" id="heroArt">
+        <div class="rocket-wrap" id="rocket">
+          <div class="flame"></div>
+          <div class="rocket" aria-hidden="true">🚀</div>
+        </div>
+        <div class="planet planet-1"></div>
+        <div class="planet planet-2"></div>
+      </div>
+    </section>
+<!--plot-->
+<section id="apod" class="card elevate">
+      <div class="section-head">
+        <h2>📷 NASA APOD (Astronomy Picture of the Day)</h2>
+        <div class="hint" data-tip="Works with DEMO_KEY for testing. Add your own api.nasa.gov key to increase the quota.">?</div>
+      </div>
+      <div class="grid two">
+        <div>
+          <label>API Key (optional)
+            <input id="apiKey" type="text" placeholder="DEMO_KEY"/>
+          </label>
+          <label>Date (optional)
+            <input id="apodDate" type="date"/>
+          </label>
+          <div class="row">
+            <button id="loadApodBtn" class="primary">Load image</button>
+            <button id="saveApodBtn" class="ghost" disabled>Save image</button>
+          </div>
+        </div>
+        <div id="apodResult" class="apod shimmer">
+          <div class="apod-skel"></div>
+          <div class="apod-meta">
+            <div class="line"></div>
+            <div class="line half"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Section -->
+    <section id="data" class="card elevate">
+      <div class="section-head">
+        <h2>🪐 Exoplanets data — interactive table</h2>
+        <div class="hint" data-tip="Upload CSV or use the sample/API. Sort by clicking a column header.">?</div>
+      </div>
+
+      <div class="toolbar">
+        <label class="btn-file">
+          📄 Choose CSV
+          <input id="csvInput" type="file" accept=".csv" hidden/>
+        </label>
+        <button id="loadSampleBtn" class="ghost">Load sample</button>
+        <button id="loadFromAPI" class="primary">⛓️ Load from API</button>
+        <div class="sep"></div>
+        <label class="inline">🔎 Name
+          <input id="searchName" type="text" placeholder="Search planet…"/>
+        </label>
+        <label class="inline" data-tip="Radius in Earth units">
+          🟣 Radius from
+          <input id="minRadius" type="number" step="0.1" placeholder="0.5"/>
+        </label>
+        <label class="inline">
+          to
+          <input id="maxRadius" type="number" step="0.1" placeholder="2"/>
+        </label>
+        <label class="inline" data-tip="Discovery year">
+          📅 Year from
+          <input id="minYear" type="number" placeholder="1995"/>
+        </label>
+        <label class="inline">
+          to
+          <input id="maxYear" type="number" placeholder="2025"/>
+        </label>
+        <div class="sep"></div>
+        <button id="resetFilters" class="ghost">Reset filters</button>
+        <button id="exportBtn" class="primary">Export results</button>
+      </div>
+
+      <div class="summary" id="summary">— No data yet —</div>
+      <div class="table-wrapper gloss">
+        <table id="dataTable" class="grid-table">
+          <thead>
+            <tr>
+              <th data-key="pl_name">Name <span class="sort-ind">↕</span></th>
+              <th data-key="pl_orbper" data-tip="Orbital period in days">Period (d) <span class="sort-ind">↕</span></th>
+              <th data-key="pl_rade" data-tip="Radius relative to Earth">Radius (R⊕) <span class="sort-ind">↕</span></th>
+              <th data-key="disc_year">Discovery year <span class="sort-ind">↕</span></th>
+              <th data-key="hostname">Host star <span class="sort-ind">↕</span></th>
+              <th data-key="discoverymethod">Method <span class="sort-ind">↕</span></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Chart Section (2D) -->
+    
+
+    <!-- 3D Visualizations -->
+    <section id="viz3d" class="card elevate">
+      <div class="section-head">
+        <h2>🧊 3D Visualizations</h2>
+        <div class="hint" data-tip="Interact: rotate/zoom with the mouse. Updates automatically with filters.">?</div>
+      </div>
+      <div class="grid two">
+        <div class="three-card">
+          <h3>Scatter 3D — (Period × Radius × Year)</h3>
+          <div id="scatter3d" class="plot"></div>
+        </div>
+        <div class="three-card">
+          <h3>Surface 3D — (Year × Method → Count)</h3>
+          <div id="surface3d" class="plot"></div>
+        </div>
+      </div>
+      <div class="three-card" style="margin-top:18px">
+        <h3>Correlation Surface 3D — (like the heatmap in your screenshot)</h3>
+        <div id="corr3d" class="plot"></div>
+      </div>
+    </section>
+
+  <!-- EXTRA 2D ANALYTICS MOVED BELOW 3D -->
+
+  <!-- YEAR CHART MOVED BELOW 3D -->
+  <section id="chart" class="card elevate">
+      <div class="section-head">
+        <h2>📊 Discoveries per year</h2>
+        <div class="hint" data-tip="Number of planets discovered for each year from the current dataset.">?</div>
+      </div>
+      <canvas id="yearChart" height="140"></canvas>
+    </section>
+
+  <div class="card three-card">
+  <h3>Radius distribution (by method)</h3>
+  <div id="histRadius" class="plot"></div>
+</div>
+
+<div class="card three-card">
+  <h3>Radius distribution — box plot</h3>
+  <div id="boxByMethod" class="plot"></div>
+</div>
+
+<div class="card three-card">
+  <h3>Cumulative discoveries</h3>
+  <div id="cumLine" class="plot"></div>
+</div>
+
+<div class="card three-card">
+  <h3>Year × Radius bins</h3>
+  <div id="heatYearRadius" class="plot"></div>
+</div>
+
+<div class="card three-card">
+  <h3>Parallel Coordinates</h3>
+  <div id="parallelCoords" class="plot"></div>
+</div>
+
+    <!-- APOD Section -->
+    
+
+
+    <!-- Predict Section -->
+    <section id="predict" class="card elevate">
+      <div class="section-head">
+        <h2>🤖 Prediction — input features</h2>
+        <div class="hint" data-tip="POST to /predict and get back {label, prob}.">?</div>
+      </div>
+      <div class="grid two">
+        <div>
+          <div class="toolbar">
+            <label class="inline">Orbital period (days) — pl_orbper
+              <input id="in_orbper" type="number" step="0.001" placeholder="e.g., 37.42"/>
+            </label>
+            <label class="inline">Radius (Earth units) — pl_rade
+              <input id="in_rade" type="number" step="0.01" placeholder="e.g., 1.2"/>
+            </label>
+            <label class="inline">Discovery year — disc_year
+              <input id="in_year" type="number" placeholder="e.g., 2020"/>
+            </label>
+            <label class="inline">Discovery method — discoverymethod
+              <input id="in_method" type="text" placeholder="Transit / RV / Imaging ..."/>
+            </label>
+            <button id="predictBtn" class="primary">Send to /predict</button>
+          </div>
+        </div>
+        <div id="predictResult" class="card sub">
+          <h3>Result</h3>
+          <div class="muted">— No result yet —</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Settings -->
+    <section id="settings" class="card">
+      <div class="section-head">
+        <h2>⚙️ Settings — API</h2>
+        <div class="hint" data-tip="base=https://api.example.com | data=/predictions | predict=/predict">?</div>
+      </div>
+      <div class="grid two">
+        <div class="toolbar">
+          <label class="inline">Base URL
+            <input id="apiBase" type="text" placeholder="https://your.api.domain"/>
+          </label>
+          <label class="inline">Data Path
+            <input id="apiDataPath" type="text" value="/predictions"/>
+          </label>
+          <label class="inline">Predict Path
+            <input id="apiPredictPath" type="text" value="/predict"/>
+          </label>
+          <button id="saveApiCfg" class="primary">Save settings</button>
+        </div>
+        <div class="card sub">
+          <h3>Notes</h3>
+          <ul>
+            <li>Make sure your server allows <b>CORS</b>.</li>
+            <li><code>/predictions</code> should return a JSON array.</li>
+            <li><code>/predict</code> should return <code>{label, prob}</code>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="card">
+      <h2>ℹ️ About this UI</h2>
+      <p>An interactive space data dashboard built for exploring NASA’s open exoplanet datasets.
+You can upload or fetch real data, visualize 2D/3D planet discoveries, filter results, and even send prediction requests to your own AI model.
+Designed to combine science, data, and visualization in one place.</p>
+    </section>
+    <div id="statsBox" class="card" style="display:none; position:fixed; right:20px; bottom:20px; max-width:320px; z-index:6;"></div>
+</main>
+
+  <footer class="footer">
+    <small>© 2025 NASA Data Studio — Crafted for Star Navigators Team 🌙</small>
+  </footer>
+
+  <template id="tooltipTpl"><div class="tooltip"></div></template>
+
+  <!-- Scripts -->
+   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <script src="app.js"></script>
+  <script src="charts3d.js"></script>
+  <script src="fx.js"></script>
+  <script src="script.js"></script>
+<script src="./charts3d.js"></script>
+<script src="./app.extra-patch.js"></script>
+
+
+
+</body>
+</html>

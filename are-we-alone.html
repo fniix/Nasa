@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Are We Alone? — Excel Analyzer</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="alone.css"/>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin/>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+</head>
+<body>
+  <canvas id="bgStars" aria-hidden="true"></canvas>
+  <canvas id="bgTrails" aria-hidden="true"></canvas>
+
+  <header class="topbar">
+    <div class="brand">
+      <svg width="28" height="28" viewBox="0 0 24 24" class="logo" aria-hidden="true">
+        <defs><linearGradient id="g1" x1="0" x2="1">
+          <stop offset="0%" stop-color="#7c5cff"/><stop offset="100%" stop-color="#3dd9eb"/></linearGradient></defs>
+        <path fill="url(#g1)" d="M12 2l2.39 4.84 5.34.78-3.86 3.77.91 5.32L12 14.77 7.22 16.71l.91-5.32L4.27 7.62l5.34-.78L12 2z"/>
+      </svg>
+      <span>NASA Data Studio — Are We Alone?</span>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="are-we-alone.html" class="active">Are We Alone?</a>
+    </nav>
+    <div class="actions">
+      <a class="ghost" href="travel1.html">Travel</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="section-head">
+        <h2>📥 Upload Excel or CSV</h2>
+        <div class="hint" data-tip="Drop a .xlsx/.xls or .csv file. We auto-detect column names in English/Arabic.">?</div>
+      </div>
+      <div class="dropzone">
+        <p class="muted">Drag & drop your file here, or</p>
+        <label class="btn-file">
+          Choose file
+          <input id="fileInput" type="file" accept=".xlsx,.xls,.csv" hidden/>
+        </label>
+        <div class="status muted">No file yet</div>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><div>Total rows</div><h3 id="kpi_total">0</h3></div>
+        <div class="kpi"><div>With names</div><h3 id="kpi_named">0</h3></div>
+        <div class="kpi"><div>With year</div><h3 id="kpi_year">0</h3></div>
+        <div class="kpi"><div>Small (≤1.5 R⊕)</div><h3 id="kpi_small">0</h3></div>
+      </div>
+    </section>
+
+    <section class="card elevate">
+      <div class="section-head"><h2>🫧 Bubble model — Period × Radius</h2></div>
+      <div id="bubblePlot" class="plot"></div>
+    </section>
+
+    <section class="card elevate">
+      <div class="section-head"><h2>🌞 Sunburst — Method → Year</h2></div>
+      <div id="sunburst" class="plot"></div>
+    </section>
+  </main>
+
+  <script src="fx.js"></script>
+  <script src="alone.js"></script>
+  <!-- Reuse existing starfield & meteors from fx.js -->
+</body>
+</html>

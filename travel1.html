@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stellar Journey — 3D Planet Tour</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://threejs.org" crossorigin>
+  <style>
+    :root{
+      --accent:#8b5cf6;
+      --bg:#070710;
+      --card:rgba(10,10,18,0.72);
+      --glass:rgba(255,255,255,0.06);
+      --text:#f7f7ff;
+      --muted:#c2c2d6;
+    }
+    html,body{height:100%;}
+    body{
+      margin:0; background:radial-gradient(1200px 600px at 70% 10%,#0b0b1a 0%,#070710 50%,#03030a 100%);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text); overflow:hidden;
+    }
+    #hud{
+      position:fixed; inset:0; pointer-events:none; display:grid; grid-template-rows:auto 1fr auto;
+      padding:16px;
+    }
+    header{
+      display:flex; justify-content:space-between; align-items:center; gap:12px; pointer-events:auto;
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.3px}
+    .brand .dot{width:10px; height:10px; border-radius:999px; background:conic-gradient(from 0deg, #00ffe1, #7c3aed, #00ffe1); box-shadow:0 0 12px 2px #7c3aed;}
+    .chip{
+      background:var(--glass); border:1px solid rgba(255,255,255,0.08); border-radius:999px; padding:8px 12px; color:var(--muted);
+    }
+    #statsBox{
+      pointer-events:auto;
+      align-self:start; justify-self:start;
+      margin-top:12px;
+      max-width:min(420px, 92vw);
+      background:var(--card); border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      border-radius:16px; padding:16px 18px;
+      display:none;
+      box-shadow:0 10px 30px rgba(0,0,0,0.45);
+    }
+    #statsBox h3{margin:0 0 6px 0; font-size:18px}
+    #statsBox p{margin: 4px 0; color:var(--muted); line-height:1.4}
+    #controls{
+      pointer-events:auto;
+      display:flex; gap:10px; justify-content:center; align-items:center; padding:12px;
+    }
+    button.primary, button.ghost{
+      appearance:none; border:none; cursor:pointer; padding:12px 18px; font-weight:600;
+      border-radius:12px; transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+    }
+    button.primary{
+      background:linear-gradient(135deg, #7c3aed, #00ffe1);
+      color:#0a0a14; box-shadow:0 8px 25px rgba(124,58,237,0.35);
+    }
+    button.primary:hover{ transform: translateY(-1px);}
+    button.ghost{
+      background:var(--glass); color:var(--text); border:1px solid rgba(255,255,255,.08);
+    }
+    #progress{
+      pointer-events:auto;
+      position:fixed; left:50%; transform:translateX(-50%);
+      bottom:86px; display:flex; gap:8px; align-items:center;
+      background:var(--glass); border:1px solid rgba(255,255,255,.08);
+      padding:8px 12px; border-radius:999px; font-size:14px; color:var(--muted)
+    }
+    .dotStep{
+      width:8px; height:8px; border-radius:999px; background:rgba(255,255,255,0.15);
+      outline:1px solid rgba(255,255,255,0.1);
+    }
+    .dotStep.active{ background:#fff; box-shadow:0 0 10px #fff;}
+    footer{display:flex; justify-content:space-between; align-items:center; pointer-events:none}
+    .hint{pointer-events:auto; color:var(--muted); font-size:12px}
+    canvas{display:block}
+  </style>
+</head>
+<body>
+  <div id="hud">
+    <header>
+      <div class="brand"><div class="dot"></div> Stellar Journey</div>
+      <div class="chip">3D Planet Tour</div>
+    </header>
+
+    <div></div>
+
+    <div id="controls">
+      <button id="startBtn" class="primary">🚀 Start Journey</button>
+      <button id="nextBtn" class="ghost" disabled>Next Planet ➜</button>
+    </div>
+    <div id="progress" aria-live="polite">
+      <span id="stepText">Planet 0 / 6</span>
+      <div id="stepDots"></div>
+    </div>
+  </div>
+
+  <div id="statsBox" role="dialog" aria-modal="false"></div>
+
+  <!-- Three.js -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.157.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="./travel1.js"></script>
+</body>
+</html>

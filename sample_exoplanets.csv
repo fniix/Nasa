@@ -1,0 +1,228 @@
+pl_name,pl_orbper,pl_rade,disc_year,hostname,discoverymethod
+Kepler-452 b,384.84,1.63,2015,Kepler-452,Transit
+Kepler-22 b,289.9,2.4,2011,Kepler-22,Transit
+Proxima Centauri b,11.186,1.1,2016,Proxima Centauri,RV
+TRAPPIST-1 e,6.1,0.92,2017,TRAPPIST-1,Transit
+GJ 1214 b,1.5804,2.85,2009,GJ 1214,Transit
+HD 209458 b,3.5247,13.44,1999,HD 209458,Transit
+Kepler-186 f,129.9,1.17,2014,Kepler-186,Transit
+Kepler-62 f,267.3,1.41,2013,Kepler-62,Transit
+51 Peg b,4.2308,13.0,1995,51 Pegasi,RV
+TOI-700 d,37.43,1.19,2020,TOI-700,Transit
+K2-18 b,32.94,2.6,2015,K2-18,Transit
+WASP-39 b,4.055,16.1,2011,WASP-39,Transit
+LHS 1140 b,24.74,1.7,2017,LHS 1140,Transit
+HR 8799 c,0.0,11000,2008,HR 8799,Imaging
+Beta Pic b,0.0,13000,2008,Beta Pictoris,Imaging
+Kepler-1649 c,19.5,1.06,2020,Kepler-1649,Transit
+Kepler-69 c,242.5,1.71,2013,Kepler-69,Transit
+Kepler-452 c,378.4,1.45,2015,Kepler-452,Transit
+Kepler-438 b,35.2,1.12,2015,Kepler-438,Transit
+Kepler-440 b,101.1,1.86,2015,Kepler-440,Transit
+HD 189733 b,2.218,13.9,2005,HD 189733,Transit
+HD 209458 c,4.02,12.6,2003,HD 209458,RV
+HD 40307 g,200.0,2.1,2012,HD 40307,RV
+OGLE-2005-BLG-390Lb,3500.0,1.5,2005,OGLE-2005,Microlensing
+OGLE-2011-BLG-0251Lb,4000.0,3.2,2011,OGLE-2011,Microlensing
+MOA-2007-BLG-192Lb,1000.0,1.1,2008,MOA-2007,Microlensing
+K2-3 d,44.6,1.5,2015,K2-3,Transit
+K2-18 c,8.97,2.2,2015,K2-18,Transit
+WASP-17 b,3.735,19.0,2009,WASP-17,Transit
+HAT-P-11 b,4.888,4.7,2009,HAT-P-11,Transit
+HAT-P-7 b,2.204,16.0,2008,HAT-P-7,Transit
+Kepler-22 c,300.2,2.0,2011,Kepler-22,Transit
+Kepler-90 g,210.6,2.9,2013,Kepler-90,Transit
+Kepler-90 h,331.6,11.0,2013,Kepler-90,Transit
+Kepler-442 b,112.3,1.34,2015,Kepler-442,Transit
+Kepler-296 e,34.1,1.2,2014,Kepler-296,Transit
+Kepler-296 f,63.3,1.8,2014,Kepler-296,Transit
+Kepler-1229 b,87.0,1.4,2015,Kepler-1229,Transit
+Kepler-1410 b,25.3,1.5,2015,Kepler-1410,Transit
+Kepler-90 i,14.4,2.1,2013,Kepler-90,Transit
+Kepler-444 e,6.2,0.74,2015,Kepler-444,Transit
+Kepler-444 f,9.7,0.67,2015,Kepler-444,Transit
+Kepler-62 e,122.4,1.61,2013,Kepler-62,Transit
+Kepler-442 c,92.1,1.3,2015,Kepler-442,Transit
+K2-155 d,40.7,1.64,2018,K2-155,Transit
+K2-72 e,24.2,1.3,2016,K2-72,Transit
+K2-72 f,31.6,1.4,2016,K2-72,Transit
+TOI-700 e,49.8,1.1,2021,TOI-700,Transit
+GJ 357 d,55.7,6.1,2019,GJ 357,RV
+GJ 273 b,18.7,1.9,2017,GJ 273,RV
+HD 85512 b,54.3,3.5,2011,HD 85512,RV
+HD 40307 d,20.4,4.2,2012,HD 40307,RV
+HD 40307 e,35.0,3.9,2012,HD 40307,RV
+HD 40307 f,51.0,2.7,2012,HD 40307,RV
+HD 69830 d,197.0,10.0,2006,HD 69830,RV
+HD 69830 c,31.6,10.0,2006,HD 69830,RV
+HD 69830 b,8.67,10.0,2006,HD 69830,RV
+HD 10180 g,600.0,15.0,2010,HD 10180,RV
+HD 10180 h,2200.0,20.0,2010,HD 10180,RV
+Kepler-22 d,400.0,2.6,2011,Kepler-22,Transit
+Kepler-62 g,350.0,2.0,2013,Kepler-62,Transit
+Kepler-186 g,300.0,1.2,2014,Kepler-186,Transit
+K2-3 e,80.1,1.9,2015,K2-3,Transit
+K2-3 f,120.4,2.3,2015,K2-3,Transit
+K2-72 g,45.8,1.3,2016,K2-72,Transit
+K2-72 h,60.9,1.5,2016,K2-72,Transit
+TOI-1452 b,11.1,1.7,2022,TOI-1452,Transit
+TOI-700 f,60.0,1.3,2023,TOI-700,Transit
+K2-18 d,20.0,2.1,2015,K2-18,Transit
+HD 80606 b,111.4,15.0,2001,HD 80606,RV
+HD 21749 b,35.6,2.7,2019,HD 21749,Transit
+HD 21749 c,7.8,0.89,2019,HD 21749,Transit
+GJ 436 b,2.64,4.1,2004,GJ 436,Transit
+GJ 581 g,36.6,3.1,2010,GJ 581,RV
+GJ 581 d,66.8,2.2,2009,GJ 581,RV
+GJ 581 e,3.15,1.9,2009,GJ 581,RV
+OGLE-2015-BLG-0966Lb,3000.0,2.0,2015,OGLE-2015,Microlensing
+OGLE-2017-BLG-1520Lb,2000.0,1.1,2017,OGLE-2017,Microlensing
+MOA-2011-BLG-293Lb,1200.0,1.3,2011,MOA-2011,Microlensing
+HR 8799 d,0.0,12000,2008,HR 8799,Imaging
+HR 8799 e,0.0,13000,2010,HR 8799,Imaging
+Beta Pic c,0.0,11000,2020,Beta Pictoris,Imaging
+Fomalhaut b,0.0,11000,2008,Fomalhaut,Imaging
+Kappa And b,0.0,12000,2012,Kappa And,Imaging
+PDS 70 b,0.0,13000,2018,PDS 70,Imaging
+PDS 70 c,0.0,12000,2019,PDS 70,Imaging
+HD 95086 b,0.0,13000,2013,HD 95086,Imaging
+TYC 8998-760-1 b,0.0,14000,2020,TYC 8998-760-1,Imaging
+Kepler-30 b,29.2,2.30,2012,Kepler-30,Transit
+Kepler-30 c,60.3,3.45,2012,Kepler-30,Transit
+Kepler-30 d,143.3,4.90,2012,Kepler-30,Transit
+Kepler-31 b,20.9,2.10,2012,Kepler-31,Transit
+Kepler-31 c,42.6,2.95,2012,Kepler-31,Transit
+Kepler-32 b,5.90,2.15,2013,Kepler-32,Transit
+Kepler-32 c,8.75,2.75,2013,Kepler-32,Transit
+Kepler-32 d,22.8,3.05,2013,Kepler-32,Transit
+Kepler-33 b,5.67,1.65,2012,Kepler-33,Transit
+Kepler-33 c,13.2,2.60,2012,Kepler-33,Transit
+Kepler-33 d,21.8,3.35,2012,Kepler-33,Transit
+Kepler-33 e,31.8,3.95,2012,Kepler-33,Transit
+Kepler-33 f,41.0,4.50,2012,Kepler-33,Transit
+Kepler-37 b,13.4,0.98,2013,Kepler-37,Transit
+Kepler-37 c,21.3,1.45,2013,Kepler-37,Transit
+Kepler-37 d,39.8,1.95,2013,Kepler-37,Transit
+Kepler-38 b,105.6,4.10,2012,Kepler-38,Transit
+Kepler-39 b,21.1,5.50,2011,Kepler-39,Transit
+Kepler-48 b,4.78,1.75,2013,Kepler-48,Transit
+Kepler-48 c,9.67,2.70,2013,Kepler-48,Transit
+Kepler-48 d,42.9,2.05,2013,Kepler-48,Transit
+Kepler-49 b,7.20,2.45,2013,Kepler-49,Transit
+Kepler-49 c,10.9,2.90,2013,Kepler-49,Transit
+Kepler-50 b,7.81,1.75,2013,Kepler-50,Transit
+Kepler-50 c,9.38,1.85,2013,Kepler-50,Transit
+Kepler-51 b,45.2,5.10,2012,Kepler-51,Transit
+Kepler-51 c,85.3,5.60,2012,Kepler-51,Transit
+Kepler-51 d,130.2,5.80,2012,Kepler-51,Transit
+Kepler-52 b,16.4,2.05,2013,Kepler-52,Transit
+Kepler-52 c,27.4,2.35,2013,Kepler-52,Transit
+Kepler-53 b,18.6,2.15,2013,Kepler-53,Transit
+Kepler-53 c,25.8,2.95,2013,Kepler-53,Transit
+Kepler-59 b,11.9,1.35,2012,Kepler-59,Transit
+Kepler-59 c,17.3,2.10,2012,Kepler-59,Transit
+Kepler-60 b,7.13,1.36,2014,Kepler-60,Transit
+Kepler-60 c,8.92,1.71,2014,Kepler-60,Transit
+Kepler-60 d,11.9,1.90,2014,Kepler-60,Transit
+Kepler-61 c,10.7,1.28,2013,Kepler-61,Transit
+Kepler-65 e,2.16,1.05,2014,Kepler-65,Transit
+Kepler-66 b,17.8,2.80,2014,Kepler-66,Transit
+Kepler-67 b,15.7,2.45,2014,Kepler-67,Transit
+Kepler-68 b,5.40,2.31,2013,Kepler-68,Transit
+Kepler-68 c,9.60,0.95,2013,Kepler-68,Transit
+Kepler-68 d,635.0,4.80,2013,Kepler-68,RV
+Kepler-69 b,13.7,1.71,2013,Kepler-69,Transit
+Kepler-70 b,0.240,0.76,2011,Kepler-70,Transit
+Kepler-70 c,0.342,0.87,2011,Kepler-70,Transit
+Kepler-78 c,10.2,2.05,2013,Kepler-78,Transit
+Kepler-79 b,13.5,3.40,2014,Kepler-79,Transit
+Kepler-79 c,27.4,3.80,2014,Kepler-79,Transit
+Kepler-79 d,52.1,4.05,2014,Kepler-79,Transit
+Kepler-79 e,81.1,4.20,2014,Kepler-79,Transit
+K2-24 b,20.9,5.50,2016,K2-24,Transit
+K2-24 c,42.4,5.30,2016,K2-24,Transit
+K2-38 b,4.02,1.55,2016,K2-38,Transit
+K2-38 c,10.56,2.42,2016,K2-38,Transit
+K2-131 b,0.369,1.45,2017,K2-131,Transit
+K2-229 b,0.584,1.15,2018,K2-229,Transit
+K2-229 c,8.33,2.35,2018,K2-229,Transit
+K2-229 d,31.0,2.65,2018,K2-229,Transit
+TOI-270 b,3.36,1.25,2019,TOI-270,Transit
+TOI-270 c,5.66,2.33,2019,TOI-270,Transit
+TOI-270 d,11.38,2.05,2019,TOI-270,Transit
+GJ 3473 b,1.20,1.25,2020,GJ 3473,RV
+GJ 9827 e,20.2,1.45,2021,GJ 9827,Transit
+HD 219134 d,46.8,1.20,2015,HD 219134,RV
+HD 219134 e,94.2,1.60,2015,HD 219134,RV
+HD 15337 b,4.75,1.64,2019,HD 15337,Transit
+HD 15337 c,17.2,2.39,2019,HD 15337,Transit
+Kepler-30 b,29.2,2.30,2012,Kepler-30,Transit
+Kepler-30 c,60.3,3.45,2012,Kepler-30,Transit
+Kepler-30 d,143.3,4.90,2012,Kepler-30,Transit
+Kepler-31 b,20.9,2.10,2012,Kepler-31,Transit
+Kepler-31 c,42.6,2.95,2012,Kepler-31,Transit
+Kepler-32 b,5.90,2.15,2013,Kepler-32,Transit
+Kepler-32 c,8.75,2.75,2013,Kepler-32,Transit
+Kepler-32 d,22.8,3.05,2013,Kepler-32,Transit
+Kepler-33 b,5.67,1.65,2012,Kepler-33,Transit
+Kepler-33 c,13.2,2.60,2012,Kepler-33,Transit
+Kepler-33 d,21.8,3.35,2012,Kepler-33,Transit
+Kepler-33 e,31.8,3.95,2012,Kepler-33,Transit
+Kepler-33 f,41.0,4.50,2012,Kepler-33,Transit
+Kepler-37 b,13.4,0.98,2013,Kepler-37,Transit
+Kepler-37 c,21.3,1.45,2013,Kepler-37,Transit
+Kepler-37 d,39.8,1.95,2013,Kepler-37,Transit
+Kepler-38 b,105.6,4.10,2012,Kepler-38,Transit
+Kepler-39 b,21.1,5.50,2011,Kepler-39,Transit
+Kepler-48 b,4.78,1.75,2013,Kepler-48,Transit
+Kepler-48 c,9.67,2.70,2013,Kepler-48,Transit
+Kepler-48 d,42.9,2.05,2013,Kepler-48,Transit
+Kepler-49 b,7.20,2.45,2013,Kepler-49,Transit
+Kepler-49 c,10.9,2.90,2013,Kepler-49,Transit
+Kepler-50 b,7.81,1.75,2013,Kepler-50,Transit
+Kepler-50 c,9.38,1.85,2013,Kepler-50,Transit
+Kepler-51 b,45.2,5.10,2012,Kepler-51,Transit
+Kepler-51 c,85.3,5.60,2012,Kepler-51,Transit
+Kepler-51 d,130.2,5.80,2012,Kepler-51,Transit
+Kepler-52 b,16.4,2.05,2013,Kepler-52,Transit
+Kepler-52 c,27.4,2.35,2013,Kepler-52,Transit
+Kepler-53 b,18.6,2.15,2013,Kepler-53,Transit
+Kepler-53 c,25.8,2.95,2013,Kepler-53,Transit
+Kepler-59 b,11.9,1.35,2012,Kepler-59,Transit
+Kepler-59 c,17.3,2.10,2012,Kepler-59,Transit
+Kepler-60 b,7.13,1.36,2014,Kepler-60,Transit
+Kepler-60 c,8.92,1.71,2014,Kepler-60,Transit
+Kepler-60 d,11.9,1.90,2014,Kepler-60,Transit
+Kepler-61 c,10.7,1.28,2013,Kepler-61,Transit
+Kepler-65 e,2.16,1.05,2014,Kepler-65,Transit
+Kepler-66 b,17.8,2.80,2014,Kepler-66,Transit
+Kepler-67 b,15.7,2.45,2014,Kepler-67,Transit
+Kepler-68 b,5.40,2.31,2013,Kepler-68,Transit
+Kepler-68 c,9.60,0.95,2013,Kepler-68,Transit
+Kepler-68 d,635.0,4.80,2013,Kepler-68,RV
+Kepler-69 b,13.7,1.71,2013,Kepler-69,Transit
+Kepler-70 b,0.240,0.76,2011,Kepler-70,Transit
+Kepler-70 c,0.342,0.87,2011,Kepler-70,Transit
+Kepler-78 c,10.2,2.05,2013,Kepler-78,Transit
+Kepler-79 b,13.5,3.40,2014,Kepler-79,Transit
+Kepler-79 c,27.4,3.80,2014,Kepler-79,Transit
+Kepler-79 d,52.1,4.05,2014,Kepler-79,Transit
+Kepler-79 e,81.1,4.20,2014,Kepler-79,Transit
+K2-24 b,20.9,5.50,2016,K2-24,Transit
+K2-24 c,42.4,5.30,2016,K2-24,Transit
+K2-38 b,4.02,1.55,2016,K2-38,Transit
+K2-38 c,10.56,2.42,2016,K2-38,Transit
+K2-131 b,0.369,1.45,2017,K2-131,Transit
+K2-229 b,0.584,1.15,2018,K2-229,Transit
+K2-229 c,8.33,2.35,2018,K2-229,Transit
+K2-229 d,31.0,2.65,2018,K2-229,Transit
+TOI-270 b,3.36,1.25,2019,TOI-270,Transit
+TOI-270 c,5.66,2.33,2019,TOI-270,Transit
+TOI-270 d,11.38,2.05,2019,TOI-270,Transit
+HD 219134 d,46.8,1.20,2015,HD 219134,RV
+HD 219134 e,94.2,1.60,2015,HD 219134,RV
+HD 15337 b,4.75,1.64,2019,HD 15337,Transit
+HD 15337 c,17.2,2.39,2019,HD 15337,Transit
+OGLE-2012-BLG-0563Lb,1200.0,2.80,2012,OGLE-2012,Microlensing
+MOA-2008-BLG-310Lb,3500.0,2.10,2008,MOA-2008,Microlensing
+

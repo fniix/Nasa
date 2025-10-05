@@ -1,0 +1,83 @@
+/* are-we-alone page specific tweaks */
+.section-head h2 { margin: 0; }
+.dropzone {
+  border: 1px dashed var(--border);
+  border-radius: 14px;
+  padding: 22px;
+  display: grid;
+  gap: 10px;
+  place-items: center;
+  background: linear-gradient(180deg, rgba(20,28,55,.6), rgba(10,14,28,.8));
+}
+.dropzone.dragover{ outline: 2px dashed var(--accent); outline-offset: 6px; }
+.kpis{ display:grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top:10px }
+.kpis .kpi{ background: var(--card); border:1px solid var(--border); padding:12px; border-radius:12px; text-align:center }
+.plot{ width: 100%; min-height: 320px; }
+
+/* --- AWA custom button styles --- */
+.btn-file{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: radial-gradient(120% 120% at 0% 0%, rgba(124,92,255,.15), transparent 60%),
+              linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  box-shadow: 0 6px 18px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.06);
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: transform .12s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.btn-file::before{
+  content: "⤓";
+  font-size: 14px;
+  line-height: 1;
+  opacity: .9;
+  transform: translateY(-1px);
+}
+.btn-file:hover{
+  transform: translateY(-1px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 24px rgba(60,120,255,.20), inset 0 1px 0 rgba(255,255,255,.08);
+}
+.btn-file:active{
+  transform: translateY(0);
+}
+.btn-file input[type="file"]{ display:none; }
+
+header.topbar .actions .ghost{
+  border-radius: 999px;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  position: relative;
+  overflow: hidden;
+  transition: border-color .2s ease, transform .12s ease, box-shadow .2s ease;
+}
+header.topbar .actions .ghost::after{
+  content:"";
+  position:absolute; inset:-1px;
+  background: radial-gradient(60% 60% at 20% 0%, rgba(90,160,255,.15), transparent 60%);
+  pointer-events:none;
+}
+header.topbar .actions .ghost:hover{
+  border-color: var(--accent);
+  box-shadow: 0 8px 20px rgba(60,120,255,.2);
+  transform: translateY(-1px);
+}
+header.topbar .actions .ghost:active{ transform: translateY(0); }
+
+.dropzone{
+  backdrop-filter: blur(6px);
+}
+
+.btn-file[data-filename]::after{
+  content: attr(data-filename);
+  font-weight: 500;
+  opacity: .85;
+  font-size: 12px;
+  padding-left: 6px;
+}
